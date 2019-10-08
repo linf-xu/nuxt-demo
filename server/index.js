@@ -11,12 +11,13 @@ config.dev = app.env !== 'production'
 async function start () {
   // Instantiate nuxt.js
   const nuxt = new Nuxt(config)
-
+  console.log(process.env.HOST)
+  console.log(process.env.PORT)
   const {
     host = process.env.HOST || '127.0.0.1',
     port = process.env.PORT || 8888
   } = nuxt.options.server
-
+  console.log(host,port)
   // Build in development
   if (config.dev) {
     const builder = new Builder(nuxt)
